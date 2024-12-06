@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tea Date Prompt</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .container {
+      text-align: center;
+    }
+    .question {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 1em;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .yes-button {
+      background-color: #28a745;
+      color: white;
+    }
+    .no-button {
+      background-color: #dc3545;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="question">
+      Laif er shes date e jawar age vablam kisu khawai tomare, nicher jekono ekta place choose korte paro🌚✌️...
+    </div>
+    <button class="button yes-button" onclick="answerYes()">Clg er Fuska🫣</button>
+    <button class="button no-button" onmouseover="moveNoButton()">Yum Cha🫰</button>
+  </div>
+  <script>
+    function answerYes() {
+      alert("Fuska khaba tahole? Okay :)\nCollege khulle chutir por khawaboni✌️");
+    }
+
+    function moveNoButton() {
+      const noButton = document.querySelector('.no-button');
+      const container = document.querySelector('.container');
+
+      // Generate random coordinates for the "No" button inside the container
+      const maxX = container.clientWidth - noButton.clientWidth;
+      const maxY = container.clientHeight - noButton.clientHeight;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      noButton.style.position = "absolute";
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+    }
+  </script>
+</body>
+</html>
